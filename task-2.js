@@ -1,5 +1,4 @@
-const ingredientsElement = document.createElement('li');
-ingredientsElement.textContent = [
+const  ingredients = [
     'Картопля',
     'Гриби',
     'Часник',
@@ -8,6 +7,16 @@ ingredientsElement.textContent = [
     'Приправи',
   ];
 
-  console.log(ingredientsElement);
+  const ingredientsList = document.querySelector('#ingredients');
 
-  document.body.appendChild(ingredientsElement);
+  const ingr = ingredients.map(option => {
+    const ingredientsElement = document.createElement('li');
+    ingredientsElement.textContent = option;
+
+    return ingredientsElement;
+  });
+
+
+  console.log(ingr);
+
+  ingredientsList.append(...ingr);
