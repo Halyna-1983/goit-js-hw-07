@@ -1,0 +1,22 @@
+// Напиши скрипт який, при наборі тексту в інпут input#name-input (подія input), 
+// підставляє його поточне значення в span#name-output. якщо інпут порожній, в спані повинен відображатися рядок 'незнайомець'.
+
+
+const input = document.querySelector('#name-input');
+const output = document.querySelector('#name-output');
+
+input.addEventListener('input', onInputChange);
+
+function onInputChange(event) {
+    console.log(event.currentTarget.value);
+    output.textContent = event.currentTarget.value;
+    output.textContent ='незнайомець';
+
+    if(event.currentTarget.value.length > 0){
+        output.textContent = event.currentTarget.value;
+    }  
+}
+
+
+
+    
