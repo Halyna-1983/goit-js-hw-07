@@ -25,30 +25,151 @@ const images = [
     },
   ];
 
-  const abs = document.querySelector('#gallery')
+  // ******************************************************************************
+// Теоретично мав би добавляти 1 елемент, aле...
 
-  const makeGallery = options => {
-return options.map(options => {
-  const imagesElement = document.createElement('img');
-  imagesElement.textContent = option.alt;
+//   const option = galleryImages[0];
 
-return imagesElement;
-})
-  }
+// const imageEl = document.createElement('img');
+// imageEl.src = option.url;
+// imageEl.textContent = option.alt;
 
-// const galleryElement = document.createElement('#gallery');
-
-// const asd = images.map(option => {
-//     const imagesElement = document.createElement('img');
-//     imagesElement.textContent = option;
-
-//     return imagesElement;
-// });
-
-const element = makeGallery(images);
-abs.append(...element);
+// console.log(imageEl);
+// ********************************************************************************
 
 
+// Метод Old-school
+
+// const imagesContainerElements = document.querySelector('#gallery');
+
+// const elements = [];
+// for(let i = 0; i < images.length; i+=1){
+//   const option = images[i];
+//    const imageEl = document.createElement('img');
+//    imageEl.src = option.url;
+//    imageEl.textContent = option.alt;
+//    imageEl.width = 640;
+
+// elements.push(imageEl);
+// }
+
+// console.log(elements);
+
+// imagesContainerElements.append(...elements);
+// ***************************************************************************************************
+
+
+// Новий метод через .map()
+
+// const imagesContainerElements = document.querySelector('#gallery');
+
+// const elements = images.map(option => {
+//   const imageEl = document.createElement('img');
+//    imageEl.src = option.url;
+//    imageEl.textContent = option.alt;
+//    imageEl.width = 640;
+
+//    return imageEl;
+// }); 
+
+// console.log(elements);
+
+// imagesContainerElements.append(...elements);
+//**************************************************************************************************** */
+
+
+//Пишемо ФУНКЦІЮ для створення разметки фото
+
+const imagesContainerElements = document.querySelector('#gallery');
+
+const createImagesSection = (options) => {
+ return options.map(option => {
+  const imageEl = document.createElement('img');
+   imageEl.src = option.url;
+   imageEl.textContent = option.alt;
+   imageEl.width = 640;
+
+   return imageEl;
+}); 
+}
+
+const elements = createImagesSection(images);
+imagesContainerElements.append(...elements);
+//****************************************************************************************************** */
+
+// Пишемо ФУНКЦІЮ для створення карточки обєкта(елемента), а потім її можна застосувати до всього масиву
+// десь помилка!!! Текс видає, фото ні (((
+
+
+// ця строка повинна бути весь час
+// const imagesContainerElements = document.querySelector('#gallery');
+
+// const pictureEl = document.createElement('article');
+
+// const srcEl = document.createElement('src');
+// srcEl.src = images.url;
+
+// const descriptionEl = document.createElement('alt')
+// descriptionEl.textContent = images.alt;
+
+// const widthEl = document.createElement('width');
+// widthEl.width = 640;
+
+// pictureEl.append(srcEl, descriptionEl, widthEl);
+
+//console.log(pictureEl);
+
+//console.log(images);
+
+                      //    ||
+                     //    \\//
+// const makeImagesCard = image => {
+//   const pictureEl = document.createElement('article');
+
+//   const srcEl = document.createElement('src');
+//   srcEl.src = images.url;
+
+//   const descriptionEl = document.createElement('alt')
+//   descriptionEl.textContent = images.alt;
+
+//   const widthEl = document.createElement('width');
+//   widthEl.width = 640;
+
+//   pictureEl.append(srcEl, descriptionEl, widthEl);
+// }
+                      //    ||
+                     //    \\//
+// const makeImagesCard = ({url, alt, width}) => {
+//   const pictureEl = document.createElement('article');
+
+//   const srcEl = document.createElement('image');
+//   srcEl.src = url;
+
+//   const descriptionEl = document.createElement('alt')
+//   descriptionEl.textContent = alt;
+
+//   const widthEl = document.createElement('width');
+//   widthEl.width = 640;
+
+//   pictureEl.append(srcEl, descriptionEl, widthEl);
+
+//   return pictureEl;
+// }
+
+// console.log(images);
+
+// //console.log(makeImagesCard(images[2]));
+
+//                       //    ||
+//                      //    \\//
+
+// const elements = images.map(makeImagesCard);
+// console.log(elements);
+
+
+// imagesContainerElements.append(...elements);
+
+// Добавляє одне фото 
 
 // galleryElement.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
 // galleryElement.alt = 'White and Black Long Fur Cat';
@@ -56,6 +177,11 @@ abs.append(...element);
 //   console.log(galleryElement);
 
 //   document.body.append(galleryElement);
+//******************************************************************************************************
+
+
+
+
 
 
 
