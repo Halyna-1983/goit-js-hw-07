@@ -1,3 +1,12 @@
+// Напиши скрипт для створення галереї зображень по масиву даних.
+// В HTML є список ul#gallery.
+// <ul id="gallery"></ul>
+// Використовуй масив об'єктів images для створення тегів img вкладених в li. Для створення розмітки використовуй шаблонні рядки і insertAdjacentHTML().
+
+// Всі елементи галереї повинні додаватися в DOM за одну операцію вставки.
+// Додай мінімальне оформлення галереї флексбоксами або грід через   css-класи.
+
+
 const images = [
     {
       url:
@@ -16,16 +25,28 @@ const images = [
     },
   ];
 
-const galleryElement = document.createElement('#images');
+  const abs = document.querySelector('#gallery')
 
-const asd = images.map(option => {
-    const imagesElement = document.createElement('img');
-    imagesElement.textContent = option;
+  const makeGallery = options => {
+return options.map(options => {
+  const imagesElement = document.createElement('img');
+  imagesElement.textContent = option.alt;
 
-    return imagesElement;
-});
+return imagesElement;
+})
+  }
 
-galleryElement.append(...asd);
+// const galleryElement = document.createElement('#gallery');
+
+// const asd = images.map(option => {
+//     const imagesElement = document.createElement('img');
+//     imagesElement.textContent = option;
+
+//     return imagesElement;
+// });
+
+const element = makeGallery(images);
+abs.append(...element);
 
 
 
