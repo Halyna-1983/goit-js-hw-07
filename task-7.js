@@ -5,4 +5,11 @@
 // <br />
 // <span id="text">Абракадабра!</span>
 
-const = 
+const fontSizeEl = document.querySelector('#font-size-control');
+const textEl = document.querySelector('#text');
+
+function fontSizeChange (event) {
+    textEl.style.fontSize = `${event.currentTarget.value}px`;
+};
+
+fontSizeEl.addEventListener('input', fontSizeChange);

@@ -1,3 +1,23 @@
+/* Task - 3 */
+
+#gallery {
+      list-style: none; 
+      margin-bottom: 20px;
+  }
+
+  img {
+      display: block;
+      /* height: 250px; */
+  
+      margin-bottom: 10px;
+      margin-right: 10px;  
+  
+      border-radius: 5%;
+  }
+  
+/* Task - 6 */
+
+
 #validation-input {
       border: 3px solid #bdbdbd;
    }
@@ -7,4 +27,5 @@
  }
     
 #validation-input.invalid {
-      border-color: #f44336;}
+      border-color: #f44336;
+}

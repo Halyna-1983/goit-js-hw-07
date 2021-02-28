@@ -87,7 +87,8 @@ const createImagesSection = (options) => {
   const imageEl = document.createElement('img');
    imageEl.src = option.url;
    imageEl.textContent = option.alt;
-   imageEl.width = 640;
+   imageEl.width = 450;
+   imageEl.height = 250;
 
    return imageEl;
 }); 
