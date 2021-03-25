@@ -5,7 +5,36 @@
 //  використовуй document.createElement().
 
 
-const  ingredients = [
+// const  ingredients = [
+//     'Картопля',
+//     'Гриби',
+//     'Часник',
+//     'Помідори',
+//     'Зелень',
+//     'Приправи',
+//   ];
+
+//   const ingredientsList = document.querySelector('#ingredients');
+
+//   const ingr = ingredients.map(option => {
+//     const ingredientsElement = document.createElement('li');
+//     ingredientsElement.textContent = option;
+
+//     return ingredientsElement;
+//   });
+
+
+//   console.log(ingr);
+
+
+//   ingredientsList.append(...ingr);
+//   // console.log(ingr[0].innerText);
+
+  //******************************************** */
+
+  // Рішення Романа
+
+  const  ingredients = [
     'Картопля',
     'Гриби',
     'Часник',
@@ -14,16 +43,16 @@ const  ingredients = [
     'Приправи',
   ];
 
-  const ingredientsList = document.querySelector('#ingredients');
 
-  const ingr = ingredients.map(option => {
+  const parentElemetnt = document.querySelector('#ingredients');
+
+  function AddListElement(element,parent)
+  {
+
     const ingredientsElement = document.createElement('li');
-    ingredientsElement.textContent = option;
+    ingredientsElement.textContent = element;
+    parent.append(ingredientsElement)
 
-    return ingredientsElement;
-  });
+  }
 
-
-  console.log(ingr);
-
-  ingredientsList.append(...ingr);
+ingredients.forEach(itemInList=> AddListElement(itemInList,parentElemetnt));

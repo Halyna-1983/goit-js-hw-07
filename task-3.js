@@ -96,6 +96,38 @@ const createImagesSection = (options) => {
 
 const elements = createImagesSection(images);
 imagesContainerElements.append(...elements);
+
+//********************************************************************************* */
+
+//Рішення Романа 1
+
+// const  imagesContainerElement = document.querySelector('#gallery');
+// const insetImagefunction = (imgElement, parent) => {
+// let template = `<li><img src="${imgElement.url}" alt="${imgElement.alt}" class="myImg"></li>`;
+// console.log(template);
+// parent.insertAdjacentHTML("afterend", template);
+// };
+
+
+// images.forEach(img=>insetImagefunction(img, imagesContainerElement));
+
+//******************************************************** */
+
+//Рішення Романа 2
+
+const  imagesContainerElement = document.querySelector('#gallery');
+const insetImagefunction = (imgElement) => {
+let template = `<li><img src="${imgElement.url}" alt="${imgElement.alt}" class="myImg"></li>`;
+return template;
+};
+let  fulltemplate='';
+
+images.forEach(img=> fulltemplate+= insetImagefunction(img));
+console.log(fulltemplate);
+imagesContainerElement.insertAdjacentHTML("afterend", fulltemplate);
+
+
+
 //****************************************************************************************************** */
 
 // Пишемо ФУНКЦІЮ для створення карточки обєкта(елемента), а потім її можна застосувати до всього масиву
