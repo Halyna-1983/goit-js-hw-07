@@ -116,7 +116,7 @@ imagesContainerElements.append(...elements);
 //Рішення Романа 2
 
 const  imagesContainerElement = document.querySelector('#gallery');
-const insetImagefunction = (imgElement) => {
+const insetImagefunction = imgElement => {
 let template = `<li><img src="${imgElement.url}" alt="${imgElement.alt}" class="myImg"></li>`;
 return template;
 };
@@ -124,7 +124,7 @@ let  fulltemplate='';
 
 images.forEach(img=> fulltemplate+= insetImagefunction(img));
 console.log(fulltemplate);
-imagesContainerElement.insertAdjacentHTML("afterend", fulltemplate);
+imagesContainerElement.insertAdjacentHTML("afterbegin", fulltemplate);
 
 
 

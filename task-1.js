@@ -44,23 +44,29 @@ console.log(`У списку ${ulQuantityEl.length} категорії.`);
   
 // одиним словом правильно буде  так 
 
+const informationEl = navTitleEl => {
+  console.log(`test1`);
+  //створюємо метод informationEl з параметром  navTitleEl (просто назва параметру) який буде передаватися в метод
+    const itemTextContent = navTitleEl.querySelector('h2');
+    // витягуємо елемент h2 з елементу що прийшов 
+    const itenLength = navTitleEl.querySelectorAll('li');
+    // витягуємо елемент li з елементу що прийшов   
+      console.log(`Категорія: ${itemTextContent.textContent}`);
+      console.log(`Кількість елементів: ${itenLength.length}`)
+  }
+  console.log(`test2`);
 
 const navCategoriesItemList = document.querySelectorAll('#categories li.item'); 
+const navCategoriesItemList2 = document.querySelectorAll('#categories2 li.item'); 
   //берем всі елементи "li" класу item що є нащадками (під елементом) лемента з ід categories  в даному випадку в нас буде масив з елементів ... ми розібємо цю випадайку categories на окремі елементи items i будем по черзі з ними оперувати 
 console.log(`У списку ${navCategoriesItemList.length} категорії.`);
 
 
-const informationEl = navTitleEl => {
-//створюємо метод informationEl з параметром  navTitleEl (просто назва параметру) який буде передаватися в метод
-  const itemTextContent = navTitleEl.querySelector('h2');
-  // витягуємо елемент h2 з елементу що прийшов 
-  const itenLength = navTitleEl.querySelectorAll('li');
-  // витягуємо елемент li з елементу що прийшов   
-    console.log(`Категорія: ${itemTextContent.textContent}`);
-    console.log(`Кількість елементів: ${itenLength.length}`)
-}
+console.log(`test3`);
 
-console.log(navCategoriesItemList.forEach(itemInList=> informationEl( itemInList )));
+console.log(navCategoriesItemList.forEach(itemInList=> informationEl(itemInList)));
+console.log(navCategoriesItemList2.forEach(itemInList=> informationEl(itemInList)));
+console.log(`test4`);
     // а тепер саме цікавіше .... з navCategoriesItemList пробігаємось по всіх елементах масиву і передаємо в метод informationEl
 
 

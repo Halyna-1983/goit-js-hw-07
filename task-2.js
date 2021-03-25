@@ -46,7 +46,7 @@
 
   const parentElemetnt = document.querySelector('#ingredients');
 
-  function AddListElement(element,parent)
+  const AddListElement = (element,parent) =>
   {
 
     const ingredientsElement = document.createElement('li');
